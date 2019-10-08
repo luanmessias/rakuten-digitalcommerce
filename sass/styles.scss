@@ -1,0 +1,27 @@
+//SETTINGS
+//=======================================================================
+@import '1_settings/font_import';
+@import '1_settings/settings';
+
+//TOOLS
+//=======================================================================
+@import '2_tools/mixins';
+
+//GENERICS
+//=======================================================================
+@import '3_generics/normalize';
+
+//BASE
+//=======================================================================
+@import '4_base/base';
+
+//OBJECTS
+//=======================================================================
+@import '5_objects/animate';
+@import '5_objects/aos';
+@import '5_objects/keyframes';
+
+//COMPONENTS
+//=======================================================================
+@import '6_components/header/header';
+@import '6_components/home/banner';

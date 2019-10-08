@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    @include fonte($font_main, 400, 18px, $color-gray);
+}
+
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    @include fonte($font_main, 800, 45px, $color_gray_dark);
+}
+
+h2 {
+    @include fonte($font_main, 700, 32px, $color_gray_dark);
+}
+
+h3 {
+    @include fonte($font_main, 700, 20px, $color_gray_dark);
+}
+
+small {
+    @include fonte($font_main, 700, 20px, $color_gray_dark);
+}
