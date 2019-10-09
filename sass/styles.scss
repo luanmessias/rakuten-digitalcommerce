@@ -2,6 +2,8 @@
 //=======================================================================
 @import '1_settings/font_import';
 @import '1_settings/settings';
+@import '1_settings/font_awesome_vars';
+@import '1_settings/svg_codes';
 
 //TOOLS
 //=======================================================================
@@ -20,8 +22,13 @@
 @import '5_objects/animate';
 @import '5_objects/aos';
 @import '5_objects/keyframes';
+@import '5_objects/placeholders';
 
 //COMPONENTS
 //=======================================================================
+// --> Header
 @import '6_components/header/header';
+@import '6_components/header/logo';
+@import '6_components/header/nav';
+
 @import '6_components/home/banner';

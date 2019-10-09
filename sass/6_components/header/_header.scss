@@ -1,0 +1,55 @@
+.dc_header {
+    @include flexbox(row, wrap, center, center, center);
+    width: 100%;
+    height: 130px;
+    z-index: 2;
+    position: fixed;
+    border-bottom: 1px solid $color_gray;
+
+    .wrapper {
+        @include flexbox(row, wrap, space-between, center, center);
+    }
+
+    @include e('sep') {
+        width: 1px;
+        height: 50px;
+        background-color: $color_gray;
+    }
+
+    @include res-max(300px) {
+        height: auto;
+
+        @include e('sep') {
+            display: none;
+        }
+    }
+
+    @include res-between(301px, 400px) {
+        height: auto;
+
+        @include e('sep') {
+            display: none;
+        }
+    }
+
+    @include res-between(401px, 500px) {
+        height: auto;
+
+        @include e('sep') {
+            display: none;
+        }
+    }
+
+    @include res-between(501px, 600px) {}
+
+    @include res-between(601px, 700px) {}
+
+    @include res-between(701px, 800px) {}
+
+    @include res-between(801px, 900px) {}
+
+    @include res-between(901px, 1000px) {}
+
+    @include res-min(1001px) {}
+
+}

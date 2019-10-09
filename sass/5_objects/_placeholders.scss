@@ -1,0 +1,35 @@
+.wrapper {
+    width: 100%;
+    max-width: $wrapper;
+}
+
+
+@include res-max(300px) {
+    .wrapper {
+        padding: 20px;
+    }
+}
+
+@include res-between(301px, 400px) {
+    .wrapper {
+        padding: 20px;
+    }
+}
+
+@include res-between(401px, 500px) {
+    .wrapper {
+        padding: 20px;
+    }
+}
+
+@include res-between(501px, 600px) {}
+
+@include res-between(601px, 700px) {}
+
+@include res-between(701px, 800px) {}
+
+@include res-between(801px, 900px) {}
+
+@include res-between(901px, 1000px) {}
+
+@include res-min(1001px) {}

@@ -1,0 +1,11 @@
+.dc_hbanner {
+    width: 100%;
+    overflow: hidden;
+    display: block;
+
+    @include e('item') {
+        @include flexbox(row, wrap, center, center, center);
+        height: 770px;
+        width: 100%;
+    }
+}
