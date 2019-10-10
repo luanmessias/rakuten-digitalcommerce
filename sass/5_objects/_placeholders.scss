@@ -1,26 +1,15 @@
 .wrapper {
     width: 100%;
     max-width: $wrapper;
+    padding: 20px;
 }
 
 
-@include res-max(300px) {
-    .wrapper {
-        padding: 20px;
-    }
-}
+@include res-max(300px) {}
 
-@include res-between(301px, 400px) {
-    .wrapper {
-        padding: 20px;
-    }
-}
+@include res-between(301px, 400px) {}
 
-@include res-between(401px, 500px) {
-    .wrapper {
-        padding: 20px;
-    }
-}
+@include res-between(401px, 500px) {}
 
 @include res-between(501px, 600px) {}
 

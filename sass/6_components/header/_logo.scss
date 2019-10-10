@@ -1,5 +1,7 @@
 .dc_logo {
     @include e('element') {
+        @include transition;
+        max-width: 300px;
         width: 300px;
         height: 35px;
         display: block;
@@ -7,11 +9,6 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-
-        &:hover {
-            background-image: url("data:image/svg+xml, #{$svg_logo_red}");
-        }
-
     }
 
     @include res-max(300px) {
@@ -28,13 +25,33 @@
         }
     }
 
-    @include res-between(401px, 500px) {}
+    @include res-between(401px, 500px) {
+        @include e('element') {
+            width: 200px;
+            height: 20px;
+        }
+    }
 
-    @include res-between(501px, 600px) {}
+    @include res-between(501px, 600px) {
+        @include e('element') {
+            width: 220px;
+            height: 23px;
+        }
+    }
 
-    @include res-between(601px, 700px) {}
+    @include res-between(601px, 700px) {
+        @include e('element') {
+            width: 240px;
+            height: 25px;
+        }
+    }
 
-    @include res-between(701px, 800px) {}
+    @include res-between(701px, 800px) {
+        @include e('element') {
+            width: 260px;
+            height: 35px;
+        }
+    }
 
     @include res-between(801px, 900px) {}
 

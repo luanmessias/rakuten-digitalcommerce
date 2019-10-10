@@ -16,7 +16,7 @@
         background-color: $color_gray;
     }
 
-    @include res-max(300px) {
+    @include res-max(1100px) {
         height: auto;
 
         @include e('sep') {
@@ -24,32 +24,17 @@
         }
     }
 
-    @include res-between(301px, 400px) {
+    &.fixed {
+        @include transition;
         height: auto;
+        background-color: #FFF;
+        border-bottom: 1px solid $color_gray_light;
 
-        @include e('sep') {
-            display: none;
+        @include res-min(1001px) {
+            .dc_header__sep {
+                display: none;
+            }
         }
     }
-
-    @include res-between(401px, 500px) {
-        height: auto;
-
-        @include e('sep') {
-            display: none;
-        }
-    }
-
-    @include res-between(501px, 600px) {}
-
-    @include res-between(601px, 700px) {}
-
-    @include res-between(701px, 800px) {}
-
-    @include res-between(801px, 900px) {}
-
-    @include res-between(901px, 1000px) {}
-
-    @include res-min(1001px) {}
 
 }

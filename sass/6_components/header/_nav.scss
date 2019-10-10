@@ -4,9 +4,11 @@
     }
 
     @include e('mob') {
+        display: none;
         cursor: pointer;
 
         @include e('line') {
+            @include transition();
             width: 25px;
             height: 2px;
             background-color: $color_gray_lighter;
@@ -22,6 +24,7 @@
         list-style: none;
         position: relative;
         height: 130px;
+
 
         &:hover {
             >.dc_subnav {
@@ -62,6 +65,7 @@
     left: 0;
     padding: 10px 20px;
     background-color: #FFF;
+    margin-bottom: 10px;
 
     @include e('item') {
         list-style: none;
@@ -89,38 +93,117 @@
 }
 
 
-@include res-max(300px) {
+@include res-max(1100px) {
     .dc_nav {
+        &.active {
+            &:before {
+                @include transition;
+                content: "";
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #000;
+                opacity: .5;
+                z-index: 10;
+                overflow: hidden;
+            }
+        }
+
         @include e('container') {
-            display: none;
+            @include flexbox(column, nowrap, flex-start, flex-start, flex-start);
+            @include transition;
+            @include radiustl(15px);
+            visibility: hidden;
+            opacity: 0;
+            width: 250px;
+            height: 100%;
+            position: fixed;
+            padding-top: 40px;
+            overflow-x: auto;
+            background-color: #FFF;
+            top: 0;
+            right: -250px;
+            z-index: 11;
+
+            &.active {
+                @include animate(fadeInRight, 0s, .5s);
+                visibility: visible;
+                right: 0;
+            }
+
+            &.disabled {
+                @include animate(fadeOutRight, 0s, .5s);
+                right: -250px;
+            }
+
+        }
+
+        @include e('item') {
+            @include flex-justify(flex-start);
+            height: auto;
+            width: 100%;
+            color: $color_gray_dark;
+            padding-left: 20px;
+
+            &:hover {
+                .dc_subnav {
+                    @include animate(none, 0s, .1s);
+                }
+
+                >a {
+                    border: 0;
+                }
+            }
+        }
+
+        @include e('link') {
+            @include flex-justify(flex-start);
+            @include border-radius(0);
+            color: $color_gray;
+            font-weight: bold;
+            width: 100%;
+            display: block;
+
+        }
+
+        .dc_subnav {
+            transition: none;
+            visibility: visible;
+            display: block;
+            position: relative;
+            top: 0;
+            background-color: transparent;
+            padding: 0 0 0 5px;
+        }
+
+        @include e('mob') {
+            display: block;
+
+            &.active {
+                position: fixed;
+                right: 20px;
+                top: 20px;
+                z-index: 99999;
+
+                .dc_nav__mob__line {
+                    background-color: $color_gray;
+
+                    @include m('mid') {
+                        @include opacity(0);
+                    }
+
+                    @include m('top') {
+                        @include transform(translate(0, 9px) rotate(131deg));
+                    }
+
+                    @include m('bot') {
+                        @include transform(translate(0, -5px) rotate(-129deg));
+                    }
+                }
+            }
         }
     }
+
 }
-
-@include res-between(301px, 400px) {
-    .dc_nav {
-        @include e('container') {
-            display: none;
-        }
-    }
-}
-
-@include res-between(401px, 500px) {
-    .dc_nav {
-        @include e('container') {
-            display: none;
-        }
-    }
-}
-
-@include res-between(501px, 600px) {}
-
-@include res-between(601px, 700px) {}
-
-@include res-between(701px, 800px) {}
-
-@include res-between(801px, 900px) {}
-
-@include res-between(901px, 1000px) {}
-
-@include res-min(1001px) {}
