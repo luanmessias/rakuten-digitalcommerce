@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 52.97 29.57">
+    <defs>
+        <style>.cls-1,.cls-3{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3{stroke:#fff;stroke-width:2px;}</style>
+        <clipPath id="clip-path" transform="translate(0 0)">
+            <rect class="cls-1" width="52.97" height="29.57"/>
+        </clipPath>
+    </defs>
+    <title>Ativo 1</title>
+    <g id="Camada_2" data-name="Camada 2">
+        <g id="Camada_1-2" data-name="Camada 1">
+            <g class="cls-2">
+                <polygon class="cls-3" points="1 1 1 22.51 16.38 22.51 14.62 28.57 20.11 28.57 23.55 22.51 23.55 1 1 1"/>
+                <polygon class="cls-3" points="29.42 1 29.42 22.51 44.8 22.51 43.05 28.57 48.54 28.57 51.97 22.51 51.97 1 29.42 1"/>
+            </g>
+        </g>
+    </g>
+</svg>

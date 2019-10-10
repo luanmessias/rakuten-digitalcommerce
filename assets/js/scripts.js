@@ -37,7 +37,7 @@ $(document).ready(function() {
 
 $(window).scroll(function() {
   var scTop = $(window).scrollTop();
-  if (scTop >= 700) {
+  if (scTop >= 50) {
     $(".dc_header").addClass("fixed");
   } else {
     $(".dc_header").removeClass("fixed");

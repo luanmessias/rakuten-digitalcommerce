@@ -5,7 +5,7 @@
         width: 300px;
         height: 35px;
         display: block;
-        background-image: url("data:image/svg+xml, #{$svg_logo_white}");
+        background-image: url("#{$svg_logo_white}");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -52,10 +52,4 @@
             height: 35px;
         }
     }
-
-    @include res-between(801px, 900px) {}
-
-    @include res-between(901px, 1000px) {}
-
-    @include res-min(1001px) {}
 }

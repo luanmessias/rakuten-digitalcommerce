@@ -376,3 +376,24 @@ filter:#{"grayscale(#{$value})"};
     @content;
   }
 }
+
+@mixin dc_button($width: 100px, $height: 50px, $radius: 5px, $bg: #000, $darken: false) {
+  @include flexbox(row, wrap, center, center, center);
+  @include border-radius($radius);
+  @include transition;
+  width: 100%;
+  max-width: $width;
+  height: $height;
+  background-color: $bg;
+  text-decoration: none;
+
+  &:hover {
+    @if $darken {
+      background-color: darken($bg, 5);
+    }
+
+    @else {
+      background-color: lighten($bg, 5);
+    }
+  }
+}

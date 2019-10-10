@@ -7,5 +7,104 @@
         @include flexbox(row, wrap, center, center, center);
         height: 770px;
         width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    @include e('quotes') {
+        @include transition;
+        @include animate(fadeInLeft, 0s, 1s);
+        background-image: url('#{$svg_quotes_white}');
+        width: 75px;
+        height: 45px;
+        background-position: center top;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    @include e('title') {
+        @include fonte($font_main, 700, 70px, #FFF);
+        @include transition;
+        @include animate(fadeInLeft, 0s, 1s);
+        text-transform: uppercase;
+        display: block;
+        max-width: 700px;
+
+        &:after {
+            @include border-radius(25px);
+            content: "";
+            display: block;
+            width: 125px;
+            height: 12px;
+            margin-top: 10px;
+            background-color: $color_red;
+        }
+    }
+
+    @include e('desc') {
+        @include fonte($font_main, 400, 24px, #FFF);
+        @include transition;
+        @include animate(fadeInLeft, .5s, 1s);
+        display: block;
+        max-width: 650px;
+        margin: 10px 0px;
+    }
+
+    @include e('button') {
+        @include dc_button(280px, 68px, 50px, $color_red, false);
+        @include fonte($font_main, 700, 18px, #FFF);
+        @include transition;
+        @include animate(fadeInLeft, 1s, 1s);
+        margin-top: 10px;
+    }
+
+    @include e('slide') {
+        @include flexbox(column, wrap, flex-start, center, center);
+        @include border-radius(25px);
+        width: 45px;
+        height: 85px;
+        border: 2px solid #FFF;
+        position: fixed;
+        bottom: 20px;
+        left: calc(50% - 22.5px);
+
+        @include e('dot') {
+            @include border-radius(50px);
+            @include opacity(0);
+            width: 10px;
+            height: 10px;
+            background-color: #FFF;
+            position: relative;
+            animation: mymove 2s infinite;
+        }
+
+    }
+
+
+    .owl-dots {
+        @include flexbox(column, nowrap, center, center, center);
+        position: absolute;
+        right: calc(((100% - #{$wrapper}) / 2) + 50px);
+        top: 0;
+        width: 50px;
+        height: 100%;
+
+        .owl-dot {
+            @include border-radius(50px);
+            @include transition;
+            background-color: #FFF;
+            width: 10px;
+            height: 10px;
+            margin: 5px 0px;
+
+            &.active {
+                height: 35px;
+                background-color: $color_red;
+            }
+
+            &:hover {
+                background-color: $color_gray;
+            }
+        }
     }
 }

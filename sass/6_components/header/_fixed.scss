@@ -6,7 +6,7 @@
     .dc_logo {
         @include e('element') {
             @include transition;
-            background-image: url("data:image/svg+xml, #{$svg_logo_red}");
+            background-image: url("#{$svg_logo_red}");
         }
     }
 
@@ -52,6 +52,7 @@
 
             &:hover {
                 .dc_subnav {
+                    @include box-shadow(4px 4px 4px #EEE);
                     top: 65px;
                 }
             }
