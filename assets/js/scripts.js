@@ -13,17 +13,17 @@ $.fn.toggle2classes = function(class1, class2) {
 $(document).ready(function() {
   // Main banner home
   $(".dc_hbanner").owlCarousel({
-    animateOut: "fadeOut",
     items: 1,
     smartSpeed: 450,
     rewind: true,
     mouseDrag: false,
     touchDrag: false,
     dots: true,
-    autoHeight: true,
     autoplay: true,
     autoplayHoverPause: true,
-    autoplayTimeout: 5000
+    autoplayTimeout: 5000,
+    animateIn: "bannerIn",
+    animateOut: "bannerOut"
   });
 
   // Nav mobile
@@ -43,3 +43,5 @@ $(window).scroll(function() {
     $(".dc_header").removeClass("fixed");
   }
 });
+
+$(window).resize(function() {});
