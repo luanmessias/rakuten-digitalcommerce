@@ -1,0 +1,55 @@
+.dc_home_01 {
+    @include flexbox(row, wrap, space-between, flex-start, flex-start);
+    padding-top: 90px;
+
+    .dc_txtBlock {
+        width: calc(100% - 700px);
+
+        @include e('title') {
+            &:after {
+                @include border-radius(25px);
+                content: "";
+                display: block;
+                width: 55px;
+                height: 8px;
+                margin-top: 10px;
+                background-color: $color_red;
+
+            }
+        }
+
+        @include e('text') {
+            @include fonte($font_main, 400, 20px, $color_gray);
+            line-height: 30px;
+        }
+
+        @include e('button') {
+            @include dc_button(280px, 68px, 50px, $color_red, false);
+            @include fonte($font_main, 700, 18px, #FFF);
+            margin-top: 10px;
+        }
+    }
+
+    @extend %paralax_box;
+
+    @include res-max(300px) {
+        padding-top: 20px;
+    }
+
+    @include res-between(301px, 400px) {}
+
+    @include res-between(401px, 500px) {}
+
+    @include res-between(501px, 600px) {}
+
+    @include res-between(601px, 700px) {}
+
+    @include res-between(701px, 800px) {}
+
+    @include res-between(801px, 900px) {}
+
+    @include res-between(901px, 1000px) {}
+
+    @include res-min(1001px) {}
+
+}

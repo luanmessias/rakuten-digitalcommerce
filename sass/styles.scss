@@ -26,10 +26,15 @@
 
 //COMPONENTS
 //=======================================================================
+// --> Generics
+@import '6_components/generics/paralax_box';
+
 // --> Header
 @import '6_components/header/header';
 @import '6_components/header/logo';
 @import '6_components/header/nav';
 @import '6_components/header/fixed';
 
+// --> Home
 @import '6_components/home/banner';
+@import '6_components/home/loja_completa'
