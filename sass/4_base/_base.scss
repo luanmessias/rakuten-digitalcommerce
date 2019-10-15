@@ -46,3 +46,47 @@ h3 {
 small {
     @include fonte($font_main, 700, 20px, $color_gray_dark);
 }
+
+
+
+@include res-max(300px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+}
+
+@include res-between(301px, 400px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+}
+
+@include res-between(401px, 500px) {
+    h1 {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+}
+
+@include res-between(501px, 600px) {}
+
+@include res-between(601px, 700px) {}
+
+@include res-between(701px, 800px) {}
+
+@include res-between(801px, 900px) {}
+
+@include res-between(901px, 1000px) {}
+
+@include res-min(1001px) {}

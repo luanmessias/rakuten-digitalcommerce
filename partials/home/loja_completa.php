@@ -8,6 +8,7 @@
         <a href="#" class="dc_txtBlock__button">SOLUÇÕES RAKUTEN</a>
     </div>
     <div class="dc_paralax">
+        <img class="dc_paralax__adv" src="assets/img/adv_home" alt="">
         <div class="dc_paralax__line"></div>
         <div class="dc_paralax__icon"></div>
         <img class="dc_paralax__img" src="assets/img/dc_home_01_img.png" alt="">

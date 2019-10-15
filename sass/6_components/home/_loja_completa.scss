@@ -34,21 +34,78 @@
 
     @include res-max(300px) {
         padding-top: 20px;
+
+        .dc_txtBlock {
+            @include order(2);
+            width: 100%;
+        }
     }
 
-    @include res-between(301px, 400px) {}
+    @include res-between(301px, 400px) {
+        padding-top: 20px;
 
-    @include res-between(401px, 500px) {}
+        .dc_txtBlock {
+            @include order(2);
+            width: 100%;
+        }
+    }
 
-    @include res-between(501px, 600px) {}
+    @include res-between(401px, 500px) {
+        padding-top: 20px;
 
-    @include res-between(601px, 700px) {}
+        .dc_txtBlock {
+            @include order(2);
+            width: 100%;
+        }
+    }
 
-    @include res-between(701px, 800px) {}
+    @include res-between(501px, 600px) {
+        padding-top: 20px;
 
-    @include res-between(801px, 900px) {}
+        .dc_txtBlock {
+            @include order(2);
+            width: 100%;
+        }
+    }
 
-    @include res-between(901px, 1000px) {}
+    @include res-between(601px, 700px) {
+        padding-top: 20px;
+
+        .dc_txtBlock {
+            @include order(2);
+            width: 100%;
+        }
+    }
+
+    @include res-between(701px, 800px) {
+        @include flexbox(row, nowrap, flex-start, flex-start, flex-start);
+        padding-top: 20px;
+
+        .dc_txtBlock {
+            width: 100%;
+            padding-left: 20px;
+        }
+    }
+
+    @include res-between(801px, 900px) {
+        @include flexbox(row, nowrap, flex-start, flex-start, flex-start);
+        padding-top: 20px;
+
+        .dc_txtBlock {
+            width: 100%;
+            padding-left: 20px;
+        }
+    }
+
+    @include res-between(901px, 1000px) {
+        @include flexbox(row, nowrap, flex-start, flex-start, flex-start);
+        padding-top: 20px;
+
+        .dc_txtBlock {
+            width: 100%;
+            padding-left: 20px;
+        }
+    }
 
     @include res-min(1001px) {}
 

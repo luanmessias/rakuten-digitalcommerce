@@ -5,6 +5,11 @@
         position: relative;
         display: block;
 
+        @include e('adv') {
+            display: none;
+            width: 100%;
+        }
+
         @include e('line') {
             @include transform(rotateZ(25deg));
             background-image: url("#{$svg_paralax_line}");
@@ -55,37 +60,22 @@
         }
 
         @mixin dc_paralax_300x {
-            order: 1;
-            width: 100%;
             height: auto;
-            position: relative;
-            left: 0;
-            top: 0;
-            padding: 0;
-            display: block;
 
-            @include e('line') {
+            >div {
                 display: none;
-            }
-
-            @include e('path') {
-                display: none;
-            }
-
-            @include e('icon') {
-                width: 50px;
-                height: 50px;
-                right: 20px;
-                bottom: 20px;
             }
 
             @include e('img') {
-                width: 100%;
-                height: auto;
-                position: unset;
-                left: 0;
+                display: none;
+            }
+
+            @include e('adv') {
+                display: block;
             }
         }
+
+
 
         @include res-max(300px) {
             @include dc_paralax_300x;
@@ -95,17 +85,29 @@
             @include dc_paralax_300x;
         }
 
-        @include res-between(401px, 500px) {}
+        @include res-between(401px, 500px) {
+            @include dc_paralax_300x;
+        }
 
-        @include res-between(501px, 600px) {}
+        @include res-between(501px, 600px) {
+            @include dc_paralax_300x;
+        }
 
-        @include res-between(601px, 700px) {}
+        @include res-between(601px, 700px) {
+            @include dc_paralax_300x;
+        }
 
-        @include res-between(701px, 800px) {}
+        @include res-between(701px, 800px) {
+            @include dc_paralax_300x;
+        }
 
-        @include res-between(801px, 900px) {}
+        @include res-between(801px, 900px) {
+            @include dc_paralax_300x;
+        }
 
-        @include res-between(901px, 1000px) {}
+        @include res-between(901px, 1000px) {
+            @include dc_paralax_300x;
+        }
 
         @include res-min(1001px) {}
 
