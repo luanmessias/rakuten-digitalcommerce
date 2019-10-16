@@ -1,0 +1,10 @@
+.dc_home_02 {
+    background-color: $color_gray_lighter;
+    padding: 50px 0px;
+
+    .dc_section_title {
+        @include flexbox(column, wrap, flex-start, center, center);
+        width: 100%;
+        text-align: center;
+    }
+}

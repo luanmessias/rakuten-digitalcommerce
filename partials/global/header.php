@@ -15,7 +15,7 @@
 
   <!-- HEADER -->
   <header class="dc_header">
-    <div class="wrapper">
+    <div class="dc_wrapper__content">
       <div class="dc_logo">
         <a class="dc_logo__link" href="#">
           <span class="dc_logo__element"></span>

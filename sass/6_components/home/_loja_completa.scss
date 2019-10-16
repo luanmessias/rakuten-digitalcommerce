@@ -1,21 +1,16 @@
 .dc_home_01 {
-    @include flexbox(row, wrap, space-between, flex-start, flex-start);
     padding-top: 90px;
+
+    .dc_wrapper__content {
+        @include flexbox(row, wrap, space-between, flex-start, flex-start);
+    }
 
     .dc_txtBlock {
         width: calc(100% - 700px);
 
-        @include e('title') {
-            &:after {
-                @include border-radius(25px);
-                content: "";
-                display: block;
-                width: 55px;
-                height: 8px;
-                margin-top: 10px;
-                background-color: $color_red;
-
-            }
+        .dc_section_title {
+            @include flexbox(column, wrap, center, flex-start, center);
+            text-align: left;
         }
 
         @include e('text') {
@@ -30,6 +25,98 @@
         }
     }
 
+    .dc_stores {
+        @include flexbox(row, wrap, space-between, inherit, center);
+        @include order(3);
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .dc_store {
+        @include flexbox(column, wrap, space-between, center, center);
+        width: calc(100% / 3 - 30px);
+
+        @include e('icon') {
+            @include flexbox(row, wrap, flex-start, center, center);
+            width: 100%;
+            height: 100px;
+
+            @include e('num') {
+                @include fonte($font_main, 600, 22px, $color_gray_dark);
+            }
+
+            @include e('line') {
+                background-color: $color_gray_dark;
+                width: 30px;
+                height: 2px;
+                margin: 0px 5px;
+            }
+
+            @include e('svg') {
+                @include m('pay') {
+                    background-image: url('#{$svg_home_pay_black}');
+                    width: 100px;
+                    height: 100px;
+                }
+
+                @include m('log') {
+                    background-image: url('#{$svg_home_log_black}');
+                    width: 114px;
+                    height: 84px;
+                }
+
+                @include m('mkt') {
+                    background-image: url('#{$svg_home_mkt_black}');
+                    width: 90px;
+                    height: 92px;
+                }
+
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+            }
+
+        }
+
+        @include e('cont') {
+            padding-left: 65px;
+            margin-top: 10px;
+        }
+
+        @include e('title') {
+            margin-bottom: 10px;
+        }
+
+        @include e('sep') {
+            background-color: $color_gray_light;
+            display: block;
+            width: 44px;
+            height: 1px;
+            margin: 10px 0px;
+        }
+
+        @include e('bt') {
+            @include dc_button(150px, 40px, 50px, #FFF, false);
+            @include fonte($font_main, 700, 18px, $color_gray_dark);
+            @include flexbox(row, wrap, flex-start, center, center);
+            @include border-radius(0);
+
+            &:after {
+                @include set-icon($fa-var-caret-right, 18px, 900, $color_red);
+                @include transition;
+                margin-left: 15px;
+            }
+
+            &:hover {
+                &:after {
+                    margin-left: 25px;
+                }
+            }
+        }
+
+
+    }
+
     @extend %paralax_box;
 
     @include res-max(300px) {
@@ -38,6 +125,12 @@
         .dc_txtBlock {
             @include order(2);
             width: 100%;
+        }
+
+        .dc_store {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
         }
     }
 
@@ -48,6 +141,12 @@
             @include order(2);
             width: 100%;
         }
+
+        .dc_store {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
+        }
     }
 
     @include res-between(401px, 500px) {
@@ -56,6 +155,12 @@
         .dc_txtBlock {
             @include order(2);
             width: 100%;
+        }
+
+        .dc_store {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
         }
     }
 
@@ -66,6 +171,12 @@
             @include order(2);
             width: 100%;
         }
+
+        .dc_store {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
+        }
     }
 
     @include res-between(601px, 700px) {
@@ -75,35 +186,59 @@
             @include order(2);
             width: 100%;
         }
+
+        .dc_store {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
+        }
     }
 
     @include res-between(701px, 800px) {
-        @include flexbox(row, nowrap, flex-start, flex-start, flex-start);
+        @include flexbox(row, wrap, space-between, flex-start, flex-start);
         padding-top: 20px;
 
         .dc_txtBlock {
-            width: 100%;
+            width: calc(100% / 2 - 20px);
             padding-left: 20px;
+        }
+
+        .dc_paralax {
+            width: calc(100% / 2 - 20px);
+        }
+
+        .dc_store {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
         }
     }
 
     @include res-between(801px, 900px) {
-        @include flexbox(row, nowrap, flex-start, flex-start, flex-start);
+        @include flexbox(row, wrap, space-between, flex-start, flex-start);
         padding-top: 20px;
 
         .dc_txtBlock {
-            width: 100%;
+            width: calc(100% / 2 - 20px);
             padding-left: 20px;
+        }
+
+        .dc_paralax {
+            width: calc(100% / 2 - 20px);
         }
     }
 
     @include res-between(901px, 1000px) {
-        @include flexbox(row, nowrap, flex-start, flex-start, flex-start);
+        @include flexbox(row, wrap, space-between, flex-start, flex-start);
         padding-top: 20px;
 
         .dc_txtBlock {
-            width: 100%;
+            width: calc(100% / 2 - 20px);
             padding-left: 20px;
+        }
+
+        .dc_paralax {
+            width: calc(100% / 2 - 20px);
         }
     }
 
