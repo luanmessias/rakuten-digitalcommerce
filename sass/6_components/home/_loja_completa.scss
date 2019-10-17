@@ -81,6 +81,8 @@
         @include e('cont') {
             padding-left: 65px;
             margin-top: 10px;
+            display: block;
+            width: 100%;
         }
 
         @include e('title') {

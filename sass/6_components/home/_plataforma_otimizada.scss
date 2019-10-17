@@ -2,9 +2,255 @@
     background-color: $color_gray_lighter;
     padding: 50px 0px;
 
-    .dc_section_title {
-        @include flexbox(column, wrap, flex-start, center, center);
-        width: 100%;
-        text-align: center;
+    .dc_hproducts {
+        @include flexbox(row, wrap, center, center, center);
+
+        @include e('item') {
+            @include flexbox(row, wrap, center, center, center);
+            @include border-radius();
+            width: 1037px;
+            height: 595px;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .owl-nav {
+            @include flexbox(row, wrap, space-around, center, center);
+            @include box-shadow(0px, 2px, 3px, $color_gray_light);
+            @include border-radius();
+            background-color: #FFF;
+            width: 205px;
+            height: 85px;
+            position: relative;
+            bottom: 50px;
+
+            &:after {
+                content: "";
+                display: block;
+                width: 1px;
+                height: 45px;
+                background-color: $color_gray_light;
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .owl-next {
+                span {
+                    font-size: 0;
+
+                    &:after {
+                        @include set-icon($fa-var-caret-right, 45px, 900, $color_gray_dark);
+                    }
+                }
+            }
+
+            .owl-prev {
+                span {
+                    font-size: 0;
+
+                    &:after {
+                        @include set-icon($fa-var-caret-left, 45px, 900, $color_gray_dark);
+                    }
+                }
+            }
+
+            .owl-next,
+            .owl-prev {
+                span:after {
+                    @include transition;
+                }
+
+                &:hover {
+                    span:after {
+                        color: $color_red;
+                    }
+                }
+            }
+
+        }
+
+
     }
+
+    .dc_hproduct {
+        @include flexbox(row, wrap, center, center, center);
+        width: 100%;
+        max-width: 500px;
+        padding: 10px;
+
+        @include e('header') {
+            @include flexbox(row, wrap, space-between, center, center);
+            width: auto;
+
+            @include e('svg') {
+                background-image: url('#{$svg_home_cart_white}');
+                width: 100px;
+                height: 90px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+            }
+
+            @include e('sep') {
+                background-color: #FFF;
+                width: 1px;
+                height: 90px;
+                display: block;
+                margin: auto 42px;
+            }
+
+            @include e('logo') {
+                background-image: url('#{$svg_logo_genesis_white}');
+                width: 185px;
+                height: 90px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+            }
+        }
+
+        @include e('title') {
+            margin: 25px 0px 20px 0px;
+
+            h2 {
+                color: #FFF;
+            }
+        }
+
+        @include e('small') {
+            text-align: center;
+
+            span {
+                color: #FFF;
+            }
+        }
+
+        @include e('btn') {
+            @include dc_button(280px, 68px, 50px, $color_red, false);
+            @include fonte($font_main, 700, 18px, #FFF);
+            margin-top: 20px;
+        }
+    }
+
+
+    @mixin hproducts_300x {
+        .dc_hproducts {
+            width: 100%;
+
+            @include e('item') {
+                @include flexbox(row, wrap, flex-start, flex-start, flex-start);
+                width: 100%;
+            }
+
+            .owl-nav {
+                position: absolute;
+                bottom: 50px;
+                right: 0px;
+                left: 0px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .dc_hproduct {
+            @include flexbox(row, wrap, flex-start, flex-start, flex-start);
+            width: 100%;
+            overflow: hidden;
+            padding: 20px;
+
+            @include e('header') {
+
+                @include e('svg') {
+                    margin-bottom: 10px;
+                    display: none;
+                }
+
+                @include e('sep') {
+                    display: none;
+                }
+            }
+
+            @include e('title') {
+                width: 100%;
+                text-align: left;
+            }
+
+            @include e('small') {
+                text-align: left;
+            }
+        }
+    }
+
+    @mixin hproducts_400x {
+        .dc_hproducts {
+            width: 100%;
+
+            @include e('item') {
+                width: 100%;
+            }
+
+            .owl-nav {
+                position: absolute;
+                bottom: 50px;
+                right: 0px;
+                left: 0px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .dc_hproduct {
+            width: 100%;
+            overflow: hidden;
+            padding: 20px;
+
+            @include e('header') {
+
+                @include e('svg') {}
+
+                @include e('sep') {
+                    margin: auto 15px;
+                }
+            }
+
+            @include e('title') {
+                width: 100%;
+                text-align: center;
+            }
+
+            @include e('small') {}
+        }
+    }
+
+    @include res-max(300px) {
+        @include hproducts_300x;
+    }
+
+    @include res-between(301px, 400px) {
+        @include hproducts_300x;
+    }
+
+    @include res-between(401px, 500px) {
+        @include hproducts_400x;
+    }
+
+    @include res-between(501px, 600px) {
+        @include hproducts_400x;
+    }
+
+    @include res-between(601px, 700px) {}
+
+    @include res-between(701px, 800px) {}
+
+    @include res-between(801px, 900px) {}
+
+    @include res-between(901px, 1000px) {}
+
+    @include res-min(1001px) {}
+
 }

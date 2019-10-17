@@ -10,15 +10,63 @@
 }
 
 .dc_section_title {
-    &:after {
-        @include border-radius(25px);
-        content: "";
-        display: block;
-        width: 55px;
-        height: 8px;
-        margin-top: 10px;
-        background-color: $color_red;
+    width: 100%;
+
+    h1 {
+        width: 100%;
+        max-width: 600px;
+
+        &:after {
+            @include border-radius(25px);
+            content: "";
+            display: block;
+            width: 55px;
+            height: 8px;
+            margin-top: 10px;
+            background-color: $color_red;
+        }
     }
+
+    @include e('small') {
+        display: block;
+        margin: 10px 0px;
+        width: 100%;
+        max-width: 700px;
+    }
+
+    @include m('left') {
+        @include flexbox(row, wrap, flex-start, center, center);
+
+        h1 {
+            @include flexbox(row, wrap, flex-start, center, center);
+        }
+
+        .dc_section_title__small {
+            text-align: left;
+        }
+    }
+
+    @include m('center') {
+        @include flexbox(row, wrap, center, center, center);
+
+        >h1 {
+            @include flexbox(row, wrap, center, center, center);
+            text-align: center;
+        }
+
+        .dc_section_title__small {
+            text-align: center;
+        }
+    }
+
+    @include m('right') {
+        >h1 {
+            @include flexbox(column, wrap, center, flex-end, center);
+        }
+    }
+
+
+
 }
 
 

@@ -1,7 +1,10 @@
 <div class="dc_wrapper dc_home_01">
     <div class="dc_wrapper__content">
         <div class="dc_txtBlock">
-            <h1 class="dc_section_title">Loja virtual completa pronta para vender</h1>
+            <div class="dc_section_title dc_section_title--left">
+                <h1>Loja virtual completa pronta para vender</h1>
+            </div>
+
             <span class="dc_txtBlock__text">
                 <p>Tudo em um só lugar! Tenha a gestão completa dos marketplac es do mercado em um único painel que irá te ajudar a aumentar suas vendas com mais facilidade.</p>
                 <p>Com a Rakuten, você monta sua loja virtual com o meio de pagamento ligado, aceitando todos o cartões de crédito e boleto bancário pagando as menores taxas do mercado. </p>

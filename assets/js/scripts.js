@@ -26,6 +26,26 @@ $(document).ready(function() {
     animateOut: "bannerOut"
   });
 
+  // procducts home
+  $(".dc_hproducts").owlCarousel({
+    stagePadding: 0,
+    autoWidth: true,
+    center: true,
+    loop: true,
+    margin: 35,
+    nav: true,
+    items: 1,
+    autoplay: false,
+    responsive: {
+      0: {
+        autoWidth: false
+      },
+      1000: {
+        autoWidth: true
+      }
+    }
+  });
+
   // Nav mobile
   $(".dc_nav__mob").click(function() {
     $(".dc_nav, .dc_nav__mob, .dc_nav__container").toggle2classes(
