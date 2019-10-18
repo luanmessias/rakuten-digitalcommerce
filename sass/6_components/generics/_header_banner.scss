@@ -1,0 +1,225 @@
+.dc_fixBanner {
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    height: auto;
+    background-color: #111d36;
+
+    >* {
+        @include transition;
+    }
+
+    @include e('item') {
+        @include flexbox(row, wrap, center, center, flex-start);
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        background-position: center;
+        background-size: cover;
+        padding-top: 160px;
+    }
+
+    @include e('quotes') {
+        @include transition;
+        @include animate(fadeInLeft, 0s, 1s);
+        background-image: url('#{$svg_quotes_white}');
+        width: 75px;
+        height: 45px;
+        background-position: center top;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    @include e('title') {
+        @include fonte($font_main, 700, 70px, #FFF);
+        @include transition;
+        @include animate(fadeInLeft, 0s, 1s);
+        text-transform: uppercase;
+        display: block;
+        max-width: 700px;
+
+        &:after {
+            @include border-radius(25px);
+            content: "";
+            display: block;
+            width: 125px;
+            height: 12px;
+            margin: 20px 0px;
+            background-color: $color_red;
+        }
+    }
+
+    @include e('desc') {
+        @include fonte($font_main, 400, 24px, #FFF);
+        @include transition;
+        @include animate(fadeInLeft, .5s, 1s);
+        display: block;
+        max-width: 650px;
+        margin: 10px 0px;
+    }
+
+    @include e('button') {
+        @include dc_button(280px, 68px, 50px, $color_red, false);
+        @include fonte($font_main, 700, 18px, #FFF);
+        @include transition;
+        @include animate(fadeInLeft, 1s, 1s);
+        margin: 30px 0px;
+    }
+
+    @include e('slide') {
+        @include flexbox(column, wrap, flex-start, center, center);
+        @include border-radius(25px);
+        width: 45px;
+        height: 85px;
+        border: 2px solid #FFF;
+        position: absolute;
+        bottom: 20px;
+        left: calc(50% - 22.5px);
+
+        @include e('dot') {
+            @include border-radius(50px);
+            @include opacity(0);
+            width: 10px;
+            height: 10px;
+            background-color: #FFF;
+            position: relative;
+            animation: mymove 2s infinite;
+        }
+
+    }
+
+
+
+    @mixin banner300x {
+        @include e('item') {
+            padding-top: 70px;
+            padding-right: 50px;
+        }
+
+        @include e('quotes') {
+            width: 40px;
+            height: 40px;
+        }
+
+        @include e('title') {
+            font-size: 38px;
+
+            &:after {
+                height: 8px;
+                width: 70px;
+            }
+        }
+
+        @include e('desc') {
+            font-size: 24px;
+        }
+
+        @include e('slide') {
+            display: none;
+        }
+
+        @include e('button') {
+            height: 45px;
+        }
+
+    }
+
+
+    @include res-max(300px) {
+        @include banner300x;
+    }
+
+    @include res-between(301px, 400px) {
+        @include banner300x;
+    }
+
+    @include res-between(401px, 500px) {
+        @include banner300x;
+
+        @include e('title') {
+            font-size: 40px;
+        }
+    }
+
+    @include res-between(501px, 600px) {
+        @include banner300x;
+
+        @include e('title') {
+            font-size: 45px;
+        }
+
+        @include e('desc') {
+            font-size: 20px;
+        }
+    }
+
+    @include res-between(601px, 700px) {
+        @include banner300x;
+
+        @include e('quotes') {
+            width: 60px;
+            height: 55px;
+        }
+
+        @include e('title') {
+            font-size: 50px;
+        }
+
+        @include e('desc') {
+            font-size: 20px;
+        }
+    }
+
+    @include res-between(701px, 800px) {
+        @include banner300x;
+
+        @include e('quotes') {
+            width: 60px;
+            height: 55px;
+        }
+
+        @include e('title') {
+            font-size: 50px;
+        }
+
+        @include e('desc') {
+            font-size: 20px;
+        }
+    }
+
+    @include res-between(801px, 900px) {
+        @include banner300x;
+
+        @include e('quotes') {
+            width: 60px;
+            height: 55px;
+        }
+
+        @include e('title') {
+            font-size: 50px;
+        }
+
+        @include e('desc') {
+            font-size: 20px;
+        }
+    }
+
+    @include res-between(901px, 1000px) {
+        @include banner300x;
+
+        @include e('quotes') {
+            width: 60px;
+            height: 55px;
+        }
+
+        @include e('title') {
+            font-size: 50px;
+        }
+
+        @include e('desc') {
+            font-size: 20px;
+        }
+    }
+
+}

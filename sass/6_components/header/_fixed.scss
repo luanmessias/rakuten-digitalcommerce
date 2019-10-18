@@ -20,7 +20,14 @@
             }
         }
 
+        @include e('social') {
+            &:before {
+                color: $color_red;
+            }
+        }
     }
+
+
 
 
     @include res-max(1100px) {

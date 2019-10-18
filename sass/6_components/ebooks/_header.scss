@@ -1,0 +1,12 @@
+.dc_header {
+    @include m('ebooks') {
+        height: 75px;
+    }
+}
+
+.dc_fixBanner {
+    @include e('item') {
+        height: 520px;
+        padding-top: 105px;
+    }
+}

@@ -28,6 +28,7 @@
 //=======================================================================
 // --> Generics
 @import '6_components/generics/paralax_box';
+@import '6_components/generics/header_banner';
 
 // --> Header
 @import '6_components/header/header';
@@ -38,4 +39,8 @@
 // --> Home
 @import '6_components/home/banner';
 @import '6_components/home/loja_completa';
-@import '6_components/home/plataforma_otimizada'
+@import '6_components/home/plataforma_otimizada';
+
+// --> Ebooks
+@import '6_components/ebooks/header';
+@import '6_components/ebooks/list';

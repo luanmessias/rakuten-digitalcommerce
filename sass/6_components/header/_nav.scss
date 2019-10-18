@@ -36,6 +36,73 @@
                 border: 2px solid #FFF;
             }
         }
+
+        @include m('social') {
+            @include flexbox(row, nowrap, flex-start, center, center);
+
+            &:hover {
+                border: 0px;
+
+                a {
+                    border: 0px;
+                }
+            }
+        }
+    }
+
+    @include e('social') {
+        margin-left: 20px;
+        text-decoration: none;
+
+        &:before {
+            font-size: 20px !important;
+            color: #FFF;
+        }
+
+        &:hover {
+            border: 0px;
+
+            &:before {
+                color: $color_red;
+            }
+        }
+
+        @include m('facebook') {
+            &:before {
+                @include set-icon($fa-var-facebook-f, 18px, 400, #FFF, true);
+            }
+        }
+
+        @include m('twitter') {
+            &:before {
+                @include set-icon($fa-var-twitter, 18px, 400, #FFF, true);
+            }
+        }
+
+        @include m('instagram') {
+            &:before {
+                @include set-icon($fa-var-instagram, 18px, 400, #FFF, true);
+            }
+        }
+
+        @include m('linkedin') {
+            &:before {
+                @include set-icon($fa-var-linkedin-in, 18px, 400, #FFF, true);
+            }
+
+        }
+
+        @include m('youtube') {
+            &:before {
+                @include set-icon($fa-var-youtube, 18px, 400, #FFF, true);
+            }
+        }
+
+        @include m('wordpress') {
+            &:before {
+                @include set-icon($fa-var-wordpress-simple, 18px, 400, #FFF, true);
+            }
+        }
     }
 
     @include e('link') {
@@ -156,7 +223,11 @@
                     border: 0;
                 }
             }
+
+
+
         }
+
 
         @include e('link') {
             @include flex-justify(flex-start);
@@ -204,6 +275,11 @@
                 }
             }
         }
+
+        @include m('ebooks') {
+            display: none;
+        }
+
     }
 
 }
