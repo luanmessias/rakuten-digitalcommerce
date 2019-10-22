@@ -2,128 +2,81 @@
     background-color: $color_gray_lighter;
 
     .dc_wrapper__content {
-        @include flexbox(row, wrap, space-between, flex-start, flex-start);
+        @include flexbox(row, wrap, space-between, inherit, flex-start);
 
-        .dc_ebook {
-            @include radiustl(10px);
-            @include radiustr(10px);
+        .owl-stage {
+            @include flexbox(row, wrap, space-between, inherit, flex-start);
+
+            .owl-item {
+                @include flexbox(row, wrap, center, center, center);
+            }
+        }
+
+        .owl-dots {
+            @include flexbox(row, nowrap, center, center, center);
             width: 100%;
-            max-width: 380px;
-            overflow: hidden;
-            background-color: #FFF;
+            height: 50px;
 
-            @include e('header') {
-                padding: 40px 40px 80px 40px;
-                background-position: center;
-                background-size: cover;
-                position: relative;
-                height: 280px;
+            .owl-dot {
+                @include border-radius(50px);
+                @include transition;
+                background-color: $color_gray;
+                width: 10px;
+                height: 10px;
+                margin: 5px;
 
-                @include e('quotes') {
-                    background-image: url('#{$svg_quotes_white}');
-                    width: 47px;
-                    height: 26px;
-                    background-position: center top;
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    margin-bottom: 10px;
+                &.active {
+                    width: 35px;
+                    background-color: $color_red;
                 }
 
-                @include e('title') {
-                    color: #FFF;
+                &:hover {
+                    background-color: $color_red;
+                }
+            }
+        }
+
+        .owl-nav {
+            @include flexbox(row, wrap, space-between, center, center);
+            @include border-radius();
+            width: 100%;
+            height: 85px;
+            position: absolute;
+            top: calc(50% - (85px / 2));
+            left: 0;
+
+            .owl-next {
+                span {
+                    font-size: 0;
 
                     &:after {
-                        @include border-radius(25px);
-                        content: "";
-                        display: block;
-                        width: 55px;
-                        height: 8px;
-                        margin-top: 10px;
-                        background-color: $color_red;
+                        @include set-icon($fa-var-caret-right, 45px, 900, $color_gray_dark);
                     }
-                }
-
-                @include e('desc') {
-                    color: #FFF;
-                    font-weight: 400;
-                    font-size: 20px;
-                    margin-top: 15px;
-                    display: block;
-                }
-
-                @include e('icon') {
-                    @include border-radius(150px);
-                    background-color: $color_red;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: 40px 40px;
-                    position: absolute;
-                    width: 84px;
-                    height: 84px;
-                    bottom: -42px;
-                    right: 30px;
-
-                    @include m('example') {
-                        background-image: url('#{$svg_home_cart_white}');
-                    }
-
-                }
-
-            }
-
-            @include e('body') {
-                padding: 40px;
-
-                @include e('type') {
-                    margin-bottom: 10px;
-                }
-
-                @include e('title') {
-                    font-size: 18px;
-                    font-weight: 600;
-                }
-
-                @include e('resume') {
-                    display: block;
-                    margin: 10px 0px;
-                    font-size: 18px;
-                }
-
-                @include e('btnCont') {
-                    @include flexbox(row, wrap, center, center, center);
-                    width: 100%;
-                }
-
-                @include e('btn') {
-                    @include dc_button(225px, 55px, 50px, $color_red, false);
-                    @include fonte($font_main, 700, 18px, #FFF);
-                    margin-top: 10px;
                 }
             }
 
-            @include e('footer') {
-                @include flexbox(row, wrap, flex-start, center, center);
-                padding: 20px 40px;
-                width: 100%;
-                border-top: 1px solid #e4e4e4;
+            .owl-prev {
+                span {
+                    font-size: 0;
 
-                @include e('tags') {
-                    font-size: 16px;
+                    &:after {
+                        @include set-icon($fa-var-caret-left, 45px, 900, $color_gray_dark);
+                    }
+                }
+            }
+
+            .owl-next,
+            .owl-prev {
+                @include flexbox(row, wrap, center, center, center);
+                @include border-radius(100px);
+
+                span:after {
+                    @include transition;
                 }
 
-                @include e('sep') {
-                    width: 1px;
-                    height: 17px;
-                    background-color: #e4e4e4;
-                    margin-left: auto;
-                }
-
-                @include e('share') {
-                    text-decoration: none;
-                    margin-left: auto;
-
-                    &:before {
-                        @include set-icon($fa-var-share-alt, 18px, 900, $color-gray);
+                &:hover {
+                    span:after {
+                        color: $color_red;
                     }
                 }
             }
@@ -131,4 +84,167 @@
         }
 
     }
+
+    .dc_ebook {
+        @include flexbox(column, wrap, flex-start, center, center);
+        @include radiustl(10px);
+        @include radiustr(10px);
+        width: 100%;
+        height: 100%;
+        max-width: 380px;
+        overflow: hidden;
+        background-color: #FFF;
+        margin: 0px;
+
+        @include e('header') {
+            padding: 40px 40px 80px 40px;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            height: 280px;
+
+            @include e('quotes') {
+                background-image: url('#{$svg_quotes_white}');
+                width: 47px;
+                height: 26px;
+                background-position: center top;
+                background-size: contain;
+                background-repeat: no-repeat;
+                margin-bottom: 10px;
+            }
+
+            @include e('title') {
+                color: #FFF;
+                text-transform: uppercase;
+
+                &:after {
+                    @include border-radius(25px);
+                    content: "";
+                    display: block;
+                    width: 55px;
+                    height: 8px;
+                    margin-top: 10px;
+                    background-color: $color_red;
+                }
+            }
+
+            @include e('desc') {
+                color: #FFF;
+                font-weight: 400;
+                font-size: 20px;
+                margin-top: 15px;
+                display: block;
+            }
+
+            @include e('icon') {
+                @include border-radius(150px);
+                background-color: $color_red;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 40px 40px;
+                position: absolute;
+                width: 84px;
+                height: 84px;
+                bottom: -42px;
+                right: 30px;
+
+                @include m('example') {
+                    background-image: url('#{$svg_home_cart_white}');
+                }
+
+            }
+
+        }
+
+        @include e('body') {
+            padding: 40px;
+
+            @include e('type') {
+                margin-bottom: 10px;
+            }
+
+            @include e('title') {
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            @include e('resume') {
+                display: block;
+                margin: 10px 0px;
+                font-size: 18px;
+            }
+
+            @include e('btnCont') {
+                @include flexbox(row, wrap, center, center, center);
+                width: 100%;
+            }
+
+            @include e('btn') {
+                @include dc_button(225px, 55px, 50px, $color_red, false);
+                @include fonte($font_main, 700, 18px, #FFF);
+                margin-top: 10px;
+            }
+        }
+
+        @include e('footer') {
+            @include flexbox(row, wrap, flex-start, center, center);
+            padding: 20px 40px;
+            width: 100%;
+            border-top: 1px solid #e4e4e4;
+            margin-top: auto;
+
+            @include e('tags') {
+                font-size: 16px;
+            }
+
+            @include e('sep') {
+                width: 1px;
+                height: 17px;
+                background-color: #e4e4e4;
+                margin-left: auto;
+            }
+
+            @include e('share') {
+                text-decoration: none;
+                margin-left: auto;
+
+                &:before {
+                    @include set-icon($fa-var-share-alt, 18px, 900, $color-gray);
+                }
+            }
+        }
+
+    }
+
+    @include res-max(300px) {
+        .dc_ebook {
+            margin-top: 20px;
+
+            @include e('header') {
+                padding: 40px 20px;
+            }
+
+            @include e('body') {
+                padding: 40px 20px;
+            }
+
+        }
+    }
+
+    @include res-between(301px, 400px) {}
+
+    @include res-between(401px, 500px) {}
+
+    @include res-between(501px, 600px) {}
+
+    @include res-between(601px, 700px) {}
+
+    @include res-between(701px, 800px) {}
+
+    @include res-between(801px, 900px) {}
+
+    @include res-between(901px, 1000px) {}
+
+    @include res-min(1001px) {}
+
 }

@@ -6,7 +6,7 @@
 
 .dc_fixBanner {
     @include e('item') {
-        height: 520px;
+        height: auto;
         padding-top: 105px;
     }
 }

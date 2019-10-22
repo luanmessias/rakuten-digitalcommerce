@@ -12,6 +12,31 @@ $.fn.toggle2classes = function(class1, class2) {
 
 $(document).ready(function() {
   // Main banner home
+  $(".dc_ebooks .dc_wrapper__content").owlCarousel({
+    items: 3,
+    smartSpeed: 450,
+    rewind: true,
+    mouseDrag: true,
+    touchDrag: true,
+    dots: true,
+    nav: true,
+    autoplay: false,
+    autoplayHoverPause: true,
+    autoplayTimeout: 5000,
+    responsive: {
+      300: {
+        items: 1
+      },
+      850: {
+        items: 2
+      },
+      1200: {
+        items: 3
+      }
+    }
+  });
+
+  // Main banner home
   $(".dc_hbanner").owlCarousel({
     items: 1,
     smartSpeed: 450,
@@ -53,6 +78,21 @@ $(document).ready(function() {
       "disabled"
     );
   });
+
+  if ($(".dc_ebook__body__resume").length) {
+    $(function() {
+      $(".dc_ebook__body__resume").each(function() {
+        len = $(this).text().length;
+        str = $(this)
+          .text()
+          .substr(0, 120);
+        lastIndexOf = str.lastIndexOf(" ");
+        if (len > 120) {
+          $(this).text(str.substr(0, lastIndexOf) + "…");
+        }
+      });
+    });
+  }
 });
 
 $(window).scroll(function() {
