@@ -71,4 +71,68 @@
         }
 
     }
+
+    @mixin bottom_300x {
+        @include e('bottom') {
+            @include e('info') {
+                text-align: center;
+
+                @include e('txt') {
+                    strong {
+                        display: block;
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    @mixin footer_300x {
+        @include e('footer') {
+            img {
+                width: 100%;
+            }
+
+            ul {
+                width: 100%;
+
+                li {
+                    width: 100%;
+                    text-align: center;
+                    margin: 5px 0px;
+                }
+            }
+        }
+    }
+
+    @include res-max(300px) {
+        @include bottom_300x;
+        @include footer_300x;
+    }
+
+    @include res-between(301px, 400px) {
+        @include bottom_300x;
+        @include footer_300x;
+    }
+
+    @include res-between(401px, 500px) {
+        @include bottom_300x;
+        @include footer_300x;
+    }
+
+    @include res-between(501px, 600px) {
+        @include bottom_300x;
+    }
+
+    @include res-between(601px, 700px) {}
+
+    @include res-between(701px, 800px) {}
+
+    @include res-between(801px, 900px) {}
+
+    @include res-between(901px, 1000px) {}
+
+    @include res-min(1001px) {}
+
 }

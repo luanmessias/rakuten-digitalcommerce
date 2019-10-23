@@ -3489,7 +3489,7 @@ small {
     align-content: center; }
     .dc_section_title--center > h1 {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
@@ -5757,5 +5757,61 @@ small {
         color: #616161;
         text-decoration: none;
         margin: 0px 5px; }
+
+@media (max-width: 300px) {
+  .dc_ebooks__bottom__info {
+    text-align: center; }
+    .dc_ebooks__bottom__info__txt strong {
+      display: block;
+      width: 100%;
+      text-align: center; }
+  .dc_ebooks__footer img {
+    width: 100%; }
+  .dc_ebooks__footer ul {
+    width: 100%; }
+    .dc_ebooks__footer ul li {
+      width: 100%;
+      text-align: center;
+      margin: 5px 0px; } }
+
+@media screen and (min-width: 301px) and (max-width: 400px) {
+  .dc_ebooks__bottom__info {
+    text-align: center; }
+    .dc_ebooks__bottom__info__txt strong {
+      display: block;
+      width: 100%;
+      text-align: center; }
+  .dc_ebooks__footer img {
+    width: 100%; }
+  .dc_ebooks__footer ul {
+    width: 100%; }
+    .dc_ebooks__footer ul li {
+      width: 100%;
+      text-align: center;
+      margin: 5px 0px; } }
+
+@media screen and (min-width: 401px) and (max-width: 500px) {
+  .dc_ebooks__bottom__info {
+    text-align: center; }
+    .dc_ebooks__bottom__info__txt strong {
+      display: block;
+      width: 100%;
+      text-align: center; }
+  .dc_ebooks__footer img {
+    width: 100%; }
+  .dc_ebooks__footer ul {
+    width: 100%; }
+    .dc_ebooks__footer ul li {
+      width: 100%;
+      text-align: center;
+      margin: 5px 0px; } }
+
+@media screen and (min-width: 501px) and (max-width: 600px) {
+  .dc_ebooks__bottom__info {
+    text-align: center; }
+    .dc_ebooks__bottom__info__txt strong {
+      display: block;
+      width: 100%;
+      text-align: center; } }
 
 /*# sourceMappingURL=styles.css.map */
