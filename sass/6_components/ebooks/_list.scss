@@ -101,7 +101,7 @@
             background-position: center;
             background-size: cover;
             position: relative;
-            height: 280px;
+            height: 300px;
 
             @include e('quotes') {
                 background-image: url('#{$svg_quotes_white}');
@@ -148,8 +148,20 @@
                 bottom: -42px;
                 right: 30px;
 
-                @include m('example') {
-                    background-image: url('#{$svg_home_cart_white}');
+                @include m('cart') {
+                    background-image: url('#{$svg_cart_white}');
+                }
+
+                @include m('calendar') {
+                    background-image: url('#{$svg_calendar_white}');
+                }
+
+                @include m('megaphone') {
+                    background-image: url('#{$svg_megaphone_white}');
+                }
+
+                @include m('money') {
+                    background-image: url('#{$svg_cashin_white}');
                 }
 
             }

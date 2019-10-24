@@ -54,19 +54,19 @@
 
             @include e('svg') {
                 @include m('pay') {
-                    background-image: url('#{$svg_home_pay_black}');
+                    background-image: url('#{$svg_pay_black}');
                     width: 100px;
                     height: 100px;
                 }
 
                 @include m('log') {
-                    background-image: url('#{$svg_home_log_black}');
+                    background-image: url('#{$svg_log_black}');
                     width: 114px;
                     height: 84px;
                 }
 
                 @include m('mkt') {
-                    background-image: url('#{$svg_home_mkt_black}');
+                    background-image: url('#{$svg_mkt_black}');
                     width: 90px;
                     height: 92px;
                 }

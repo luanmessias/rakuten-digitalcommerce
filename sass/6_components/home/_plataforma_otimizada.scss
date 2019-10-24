@@ -88,7 +88,7 @@
             width: auto;
 
             @include e('svg') {
-                background-image: url('#{$svg_home_cart_white}');
+                background-image: url('#{$svg_cart_white}');
                 width: 100px;
                 height: 90px;
                 background-repeat: no-repeat;

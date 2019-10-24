@@ -1,0 +1,72 @@
+.dc_home_04 {
+    .dc_comments {
+        width: 100%;
+        margin: 25px 0px;
+
+        .owl-dots {
+            @include flexbox(row, nowrap, center, center, center);
+            width: 100%;
+            height: 50px;
+
+            .owl-dot {
+                @include border-radius(50px);
+                @include transition;
+                background-color: $color_gray;
+                width: 10px;
+                height: 10px;
+                margin: 5px;
+
+                &.active {
+                    width: 35px;
+                    background-color: $color_red;
+                }
+
+                &:hover {
+                    background-color: $color_red;
+                }
+            }
+        }
+    }
+
+    .dc_comment {
+        width: 100%;
+        max-width: 330px;
+        padding-left: 10px;
+
+        @include e('quotes') {
+            @include transition;
+            background-image: url('#{$svg_quotes_red}');
+            width: 53px;
+            height: 30px;
+            background-position: center top;
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-bottom: 10px;
+        }
+
+        @include e('txt') {
+            display: block;
+            font-size: 18px;
+            width: 100%;
+        }
+
+        @include e('sep') {
+            display: block;
+            width: 44px;
+            height: 1px;
+            background-color: #d1d1d1;
+            margin: 10px 0px;
+        }
+
+        @include e('name') {
+            @include fonte($font_main, 600, 18px, #000);
+            display: block;
+        }
+
+        @include e('job') {
+            font-size: 18px;
+            display: block;
+        }
+
+    }
+}

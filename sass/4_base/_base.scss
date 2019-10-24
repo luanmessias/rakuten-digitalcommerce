@@ -37,7 +37,7 @@ p {
 }
 
 h1 {
-    @include fonte($font_main, 800, 45px, $color_gray_dark);
+    @include fonte($font_main, 700, 45px, $color_gray_dark);
 }
 
 h2 {

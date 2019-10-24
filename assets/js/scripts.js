@@ -71,6 +71,17 @@ $(document).ready(function() {
     }
   });
 
+  // comments home
+  $(".dc_comments").owlCarousel({
+    items: 3,
+    rewind: true,
+    mouseDrag: true,
+    touchDrag: true,
+    dots: true,
+    nav: false,
+    autoplay: true
+  });
+
   // Nav mobile
   $(".dc_nav__mob").click(function() {
     $(".dc_nav, .dc_nav__mob, .dc_nav__container").toggle2classes(

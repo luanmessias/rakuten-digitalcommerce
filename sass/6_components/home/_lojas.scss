@@ -1,0 +1,102 @@
+.dc_home_03 {
+    background-color: $color_gray_lighter;
+
+    .dc_brandlist {
+        @include flexbox(row, wrap, space-between, center, center);
+        width: 100%;
+
+        @include e('link') {
+            display: block;
+            width: calc(100% / 5);
+            text-decoration: none;
+            margin: 20px 0px;
+            text-align: center;
+        }
+
+        @include e('img') {
+            width: auto;
+        }
+
+        @include e('more') {
+            @include flexbox(row, wrap, center, center, center);
+            width: 100%;
+            margin: 20px 0px;
+
+            @include e('link') {
+                @include flexbox(row, wrap, center, center, center);
+                @include border-radius(100px);
+                border: 2px solid #000;
+                width: 65px;
+                height: 65px;
+                text-decoration: none;
+                cursor: pointer;
+
+                &:before {
+                    content: "+";
+                    @include fonte($font_system, 400, 60px, #000);
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 26px;
+                }
+            }
+        }
+
+
+        @include res-max(300px) {
+            @include e('link') {
+                width: 100%;
+            }
+        }
+
+        @include res-between(301px, 400px) {
+            @include e('link') {
+                width: calc(100% / 2);
+            }
+
+            @include e('img') {
+                max-width: 180px;
+            }
+        }
+
+        @include res-between(401px, 500px) {
+            @include e('link') {
+                width: calc(100% / 2);
+            }
+
+            @include e('img') {
+                max-width: 180px;
+            }
+        }
+
+        @include res-between(501px, 600px) {
+            @include e('link') {
+                width: calc(100% / 2);
+            }
+        }
+
+        @include res-between(601px, 700px) {
+            @include e('link') {
+                width: calc(100% / 3);
+            }
+        }
+
+        @include res-between(701px, 800px) {
+            @include e('link') {
+                width: calc(100% / 3);
+            }
+        }
+
+        @include res-between(801px, 900px) {
+            @include e('link') {
+                width: calc(100% / 3);
+            }
+        }
+
+        @include res-between(901px, 1000px) {}
+
+        @include res-min(1001px) {}
+    }
+
+
+}
