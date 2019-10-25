@@ -1,0 +1,7 @@
+.dc_home_05 {
+    @include flexbox(row, wrap, center, center, center);
+    @include bgimage('home_statistic.jpg');
+    height: auto;
+    min-height: 770px;
+    background-position: center;
+}

@@ -206,7 +206,7 @@
             margin-top: auto;
 
             @include e('tags') {
-                font-size: 16px;
+                font-size: 14px;
             }
 
             @include e('sep') {
@@ -214,11 +214,13 @@
                 height: 17px;
                 background-color: #e4e4e4;
                 margin-left: auto;
+                display: none;
             }
 
             @include e('share') {
                 text-decoration: none;
                 margin-left: auto;
+                display: none;
 
                 &:before {
                     @include set-icon($fa-var-share-alt, 18px, 900, $color-gray);
